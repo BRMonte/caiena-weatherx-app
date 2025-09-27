@@ -29,6 +29,9 @@ group :development, :test do
   # RSpec for testing
   gem 'rspec-rails', '~> 8.0.0'
 
+  # WebMock for mocking HTTP requests
+  gem "webmock"
+
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
