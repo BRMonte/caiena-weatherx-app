@@ -32,6 +32,9 @@ group :development, :test do
   # WebMock for mocking HTTP requests
   gem "webmock"
 
+  # VCR for recording and playing back HTTP requests
+  gem 'vcr'
+
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
