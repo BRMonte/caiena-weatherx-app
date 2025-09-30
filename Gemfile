@@ -35,6 +35,9 @@ group :development, :test do
   # VCR for recording and playing back HTTP requests
   gem 'vcr'
 
+  # Dotenv for loading environment variables from .env file
+  gem 'dotenv-rails'
+
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
