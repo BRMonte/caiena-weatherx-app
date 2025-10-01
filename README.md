@@ -24,8 +24,6 @@
 ### Core Rails Stack
 - **Rails 7.2.2** - Web framework
 - **Ruby 3.1.2** - Programming language
-- **Puma** - Web server
-- **Bootsnap** - Boot time optimization
 
 ### External APIs
 - **OpenWeatherMap API** - Weather data source
@@ -59,7 +57,6 @@
 - **Background Jobs** - Move to Sidekiq/Resque for async processing
 - **Caching Layer** - Add Redis for weather data caching
 - **API Gateway** - Add rate limiting and authentication
-- **Microservices** - Extract services into separate applications
 
 ## Safety & Reliability
 
@@ -79,19 +76,12 @@
 - **Environment Variables** - API keys stored securely
 - **Input Validation** - All inputs validated before processing
 - **Rate Limiting** - Respects API rate limits
-- **No Sensitive Data Storage** - No database means no data persistence
 
 ## Performance Approach
 
 ### Current Performance
 - **Synchronous Processing** - Simple, predictable execution
 - **Direct API Calls** - No intermediate caching
-- **Memory Efficient** - Stateless services use minimal memory
-
-### Performance Monitoring
-- **Request Logging** - Track execution times
-- **Error Tracking** - Monitor failure rates
-- **API Response Times** - Monitor external service performance
 
 ### Performance Optimizations
 - **Service Reuse** - Geocoding results cached within request
@@ -133,24 +123,14 @@ rails console
 
 #### Create Weather Tweets
 ```ruby
-# Single city
 result = CreateTweetService.call(city: 'London')
-
-# Multiple cities
-cities = ['London', 'Paris', 'Tokyo', 'New York']
-cities.each do |city|
-  result = CreateTweetService.call(city: city)
-  puts "#{city}: #{result[:success] ? 'Success' : 'Failed'}"
-end
 ```
 
 #### Test Individual Services
 ```ruby
-# Test weather report generation
 weather_report = BuildWeatherReportService.call(city: 'London')
 puts weather_report
 
-# Test Twitter posting
 tweet_result = Clients::TwitterClient.post_tweet("Test tweet")
 puts tweet_result
 ```
@@ -163,23 +143,4 @@ bundle exec rspec
 # Run specific test files
 bundle exec rspec spec/services/create_tweet_service_spec.rb
 bundle exec rspec spec/lib/clients/twitter_client_spec.rb
-
-# Run tests with VCR (records real API calls)
-bundle exec rspec --tag vcr
 ```
-
-## API Endpoints
-
-This application is designed as a service library rather than a web application. All functionality is accessed through service classes in the Rails console or can be integrated into other applications.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Add tests for new functionality
-4. Ensure all tests pass
-5. Submit a pull request
-
-## License
-
-This project is part of a technical challenge and is not intended for production use.
