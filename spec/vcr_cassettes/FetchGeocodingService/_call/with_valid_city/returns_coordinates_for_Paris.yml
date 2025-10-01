@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/geo/1.0/direct?appid=564426a2e62c1aeb91171fa53f277c9e&limit=1&q=Paris
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 01 Oct 2025 11:32:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1773'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/direct?limit=1&q=paris"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibmFtZSI6IlBhcmlzIiwibG9jYWxfbmFtZXMiOnsiaHkiOiLVk9Wh1oDVq9WmIiwid28iOiJQYXJpIiwic2giOiJQYXJpeiIsImJnIjoi0J/QsNGA0LjQtiIsImxhIjoiTHV0ZXRpYSIsImNzIjoiUGHFmcOtxb4iLCJoZSI6Itek16jXmdeWIiwiemEiOiJCYWhsaXoiLCJ5aSI6Itek15DXqNeZ15YiLCJvcyI6ItCf0LDRgNC40LYiLCJvYyI6IlBhcsOtcyIsImd1Ijoi4Kqq4KuF4Kqw4Kq/4Kq4IiwiY3YiOiLQn9Cw0YDQuNGBIiwiZmEiOiLZvtin2LHbjNizIiwidWciOiLZvtin2LHZidqYIiwiaXQiOiJQYXJpZ2kiLCJ0bCI6IlBhcmlzIiwiYW0iOiLhjZPhiKrhiLUiLCJzbCI6IlBhcml6Iiwia24iOiLgsqrgs43gsq/gsr7gsrDgsr/gsrjgs40iLCJzYyI6IlBhcmlnaSIsImthIjoi4YOe4YOQ4YOg4YOY4YOW4YOYIiwiemgiOiLlt7Tpu44iLCJtciI6IuCkquClheCksOCkv+CkuCIsInNrIjoiUGFyw63FviIsInRnIjoi0J/QsNGA0LjQtiIsImV1IjoiUGFyaXMiLCJ0YSI6IuCuquCuvuCusOCuv+CuuOCvjSIsImV0IjoiUGFyaWlzIiwiaGkiOiLgpKrgpYjgpLDgpL/gpLgiLCJzdiI6IlBhcmlzIiwiaXMiOiJQYXLDrXMiLCJreSI6ItCf0LDRgNC40LYiLCJiYSI6ItCf0LDRgNC40LYiLCJibiI6IuCmquCnjeCmr+CmvuCmsOCmv+CmuCIsIm5sIjoiUGFyaWpzIiwicHMiOiLZvtin2LHZitizIiwiYm8iOiLgvZXgvIvgvaLgvbLgvI0iLCJnbiI6IlBhcsSpIiwibmUiOiLgpKrgpYfgpLDgpL/gpLgiLCJsdiI6IlBhcsSremUiLCJiciI6IlBhcml6IiwiZGUiOiJQYXJpcyIsImxpIjoiUGFyaWVzIiwia28iOiLtjIzrpqwiLCJodCI6IlBhcmkiLCJydSI6ItCf0LDRgNC40LYiLCJqYSI6IuODkeODqiIsImZyIjoiUGFyaXMiLCJsbiI6IlBhcmkiLCJhZiI6IlBhcnlzIiwidWsiOiLQn9Cw0YDQuNC2IiwiZ2EiOiJQw6FyYXMiLCJ0aCI6IuC4m+C4suC4o+C4teC4qiIsImx0IjoiUGFyecW+aXVzIiwiY3UiOiLQn9Cw0YDQuNC20YwiLCJrbSI6IuGelOGfieGetuGemuGeuOGenyIsInlvIjoiUGFyaXNpIiwiYXIiOiLYqNin2LHZitizIiwiZnkiOiJQYXJ5cyIsImJzIjoiUGFyaXoiLCJubyI6IlBhcmlzIiwicGEiOiLgqKrgqYjgqLDgqL/gqLgiLCJvciI6IuCsquCtjeCtn+CsvuCssOCsv+CsuCIsImFuIjoiUGFyw61zIiwiZW8iOiJQYXJpem8iLCJtbiI6ItCf0LDRgNC40YEiLCJ0dCI6ItCf0LDRgNC40LYiLCJ0ZSI6IuCwquCwvuCwsOCwv+CwuOCxjSIsImhhIjoiUGFyaWlzIiwiaHIiOiJQYXJpeiIsImt2Ijoi0J/QsNGA0LjQtiIsIm15Ijoi4YCV4YCr4YCb4YCu4YCZ4YC84YCt4YCv4YC3IiwiZ3YiOiJQYWFyeXMiLCJzciI6ItCf0LDRgNC40LciLCJodSI6IlDDoXJpenMiLCJmaSI6IlBhcmlpc2kiLCJlbCI6Is6gzrHPgc6vz4POuSIsInZpIjoiUGFyaXMiLCJrdSI6IlBhcsOucyIsImNhIjoiUGFyw61zIiwiZXMiOiJQYXLDrXMiLCJ1eiI6IlBhcmlqIiwic3EiOiJQYXJpc2kiLCJtaSI6IlBhcsSrIiwibGIiOiJQYXLDpGlzIiwic28iOiJCYWFyaWlzIiwibWsiOiLQn9Cw0YDQuNC3IiwiY28iOiJQYXJpZ2hqaSIsInBsIjoiUGFyecW8Iiwia2siOiLQn9Cw0YDQuNC2IiwidXIiOiLZvtuM2LHYsyIsIndhIjoiUGFyaXMiLCJiZSI6ItCf0LDRgNGL0LYiLCJtbCI6IuC0quC0vuC0sOC0v+C0uOC1jSIsInp1IjoiSVBhcmlzaSIsImdsIjoiUGFyw61zIiwidGsiOiJQYXJpxb4ifSwibGF0Ijo0OC44NTg4ODk3LCJsb24iOjIuMzIwMDQxMDIxNzIwMDc2NiwiY291bnRyeSI6IkZSIiwic3RhdGUiOiJJbGUtZGUtRnJhbmNlIn1d
+  recorded_at: Wed, 01 Oct 2025 11:32:47 GMT
+recorded_with: VCR 6.3.1
