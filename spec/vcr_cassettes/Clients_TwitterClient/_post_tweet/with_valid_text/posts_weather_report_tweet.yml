@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/2/tweets
+    body:
+      encoding: UTF-8
+      string: '{"text":"16°C e clear sky em London em 01/01. Média para os próximos
+        dias: 18°C em 02/01, 20°C em 03/01."}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.twitter.com
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - X-Client/0.14.1 ruby/3.1.2 (x86_64-darwin21)
+      Authorization:
+      - OAuth oauth_consumer_key="2cRsWYkmpNWZ5zPsMze6n2XPx", oauth_nonce="94ccbebb4c3533dec764c43befc3c75b",
+        oauth_signature="KLfxBRBVPagqSNgRHvxr1F05QHI%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1759350681", oauth_token="1255917363519729669-HCDyppBiCCbkVdFvEfrQq6WuwPQEA6",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 01 Oct 2025 20:31:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '177'
+      Connection:
+      - keep-alive
+      Perf:
+      - '7402827104'
+      Server:
+      - cloudflare tsa_b
+      Location:
+      - https://api.x.com/2/tweets/1973485912500625734
+      Api-Version:
+      - '2.150'
+      Cache-Control:
+      - no-cache, no-store, max-age=0
+      X-Access-Level:
+      - read-write
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Transaction-Id:
+      - 898c2707568f5222
+      X-Xss-Protection:
+      - '0'
+      X-Rate-Limit-Limit:
+      - '1080000'
+      X-Rate-Limit-Reset:
+      - '1759351581'
+      Content-Disposition:
+      - attachment; filename=json.json
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Remaining:
+      - '1079998'
+      X-App-Limit-24hour-Limit:
+      - '17'
+      X-App-Limit-24hour-Reset:
+      - '1759434271'
+      X-User-Limit-24hour-Limit:
+      - '17'
+      X-User-Limit-24hour-Reset:
+      - '1759434271'
+      X-App-Limit-24hour-Remaining:
+      - '12'
+      X-User-Limit-24hour-Remaining:
+      - '12'
+      Strict-Transport-Security:
+      - max-age=631138519; includeSubdomains
+      Origin-Cf-Ray:
+      - 987eb920993e6451-ATL
+      X-Served-By:
+      - tsa_b
+      X-Response-Time:
+      - '107'
+      X-Connection-Hash:
+      - 301965abaa61771468c265c765770f05335b3e4b4845462b362992a59b1b13b1
+      Vary:
+      - accept-encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - guest_id=v1%3A175935068176670371; SameSite=None; Secure; Path=/; Domain=twitter.com;
+        Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      - guest_id_ads=v1%3A175935068176670371; SameSite=None; Secure; Path=/; Domain=twitter.com;
+        Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      - guest_id_marketing=v1%3A175935068176670371; SameSite=None; Secure; Path=/;
+        Domain=twitter.com; Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      - personalization_id="v1_OSk4PrBYwI3U+Z68EHpsmA=="; SameSite=None; Secure; Path=/;
+        Domain=twitter.com; Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      Cf-Ray:
+      - 987eb920993e6451-GIG
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjp7InRleHQiOiIxNsKwQyBlIGNsZWFyIHNreSBlbSBMb25kb24gZW0gMDEvMDEuIE3DqWRpYSBwYXJhIG9zIHByw7N4aW1vcyBkaWFzOiAxOMKwQyBlbSAwMi8wMSwgMjDCsEMgZW0gMDMvMDEuIiwiZWRpdF9oaXN0b3J5X3R3ZWV0X2lkcyI6WyIxOTczNDg1OTEyNTAwNjI1NzM0Il0sImlkIjoiMTk3MzQ4NTkxMjUwMDYyNTczNCJ9fQ==
+  recorded_at: Wed, 01 Oct 2025 20:31:22 GMT
+recorded_with: VCR 6.3.1

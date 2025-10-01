@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/2/tweets
+    body:
+      encoding: UTF-8
+      string: '{"text":"Test tweet from RSpec"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.twitter.com
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - X-Client/0.14.1 ruby/3.1.2 (x86_64-darwin21)
+      Authorization:
+      - OAuth oauth_consumer_key="2cRsWYkmpNWZ5zPsMze6n2XPx", oauth_nonce="ebc27a6e49f6f115a4c35cc2aedf7cd1",
+        oauth_signature="gyydewU%2FjUcR2wPMAbMzAZGVHrM%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1759350681", oauth_token="1255917363519729669-HCDyppBiCCbkVdFvEfrQq6WuwPQEA6",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 01 Oct 2025 20:31:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '118'
+      Connection:
+      - keep-alive
+      Perf:
+      - '7402827104'
+      Server:
+      - cloudflare tsa_b
+      Location:
+      - https://api.x.com/2/tweets/1973485911011713530
+      Api-Version:
+      - '2.150'
+      Cache-Control:
+      - no-cache, no-store, max-age=0
+      X-Access-Level:
+      - read-write
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Transaction-Id:
+      - ee82f8c229e83ff4
+      X-Xss-Protection:
+      - '0'
+      X-Rate-Limit-Limit:
+      - '1080000'
+      X-Rate-Limit-Reset:
+      - '1759351581'
+      Content-Disposition:
+      - attachment; filename=json.json
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Remaining:
+      - '1079999'
+      X-App-Limit-24hour-Limit:
+      - '17'
+      X-App-Limit-24hour-Reset:
+      - '1759434271'
+      X-User-Limit-24hour-Limit:
+      - '17'
+      X-User-Limit-24hour-Reset:
+      - '1759434271'
+      X-App-Limit-24hour-Remaining:
+      - '13'
+      X-User-Limit-24hour-Remaining:
+      - '13'
+      Strict-Transport-Security:
+      - max-age=631138519; includeSubdomains
+      Origin-Cf-Ray:
+      - 987eb91e4bd0647b-ATL
+      X-Served-By:
+      - tsa_b
+      X-Response-Time:
+      - '119'
+      X-Connection-Hash:
+      - ec6afc0fe1c9bd913cda4170de6af0636e69b06341fbf9ddb586ad0737143f50
+      Vary:
+      - accept-encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - guest_id=v1%3A175935068140239617; SameSite=None; Secure; Path=/; Domain=twitter.com;
+        Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      - guest_id_ads=v1%3A175935068140239617; SameSite=None; Secure; Path=/; Domain=twitter.com;
+        Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      - guest_id_marketing=v1%3A175935068140239617; SameSite=None; Secure; Path=/;
+        Domain=twitter.com; Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      - personalization_id="v1_FNYfvSyGWADdExGJAUqIRg=="; SameSite=None; Secure; Path=/;
+        Domain=twitter.com; Max-Age=63072000; Expires=Fri, 01 Oct 2027 20:31:21 GMT
+      Cf-Ray:
+      - 987eb91e4bd0647b-GIG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"edit_history_tweet_ids":["1973485911011713530"],"id":"1973485911011713530","text":"Test
+        tweet from RSpec"}}'
+  recorded_at: Wed, 01 Oct 2025 20:31:21 GMT
+recorded_with: VCR 6.3.1
