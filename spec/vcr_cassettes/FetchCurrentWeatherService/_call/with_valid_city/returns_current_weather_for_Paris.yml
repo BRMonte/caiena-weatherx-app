@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/geo/1.0/direct?appid=564426a2e62c1aeb91171fa53f277c9e&limit=1&q=Paris
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 01 Oct 2025 12:49:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1773'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/direct?limit=1&q=paris"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibmFtZSI6IlBhcmlzIiwibG9jYWxfbmFtZXMiOnsidmkiOiJQYXJpcyIsInV6IjoiUGFyaWoiLCJrbSI6IuGelOGfieGetuGemuGeuOGenyIsImd2IjoiUGFhcnlzIiwiZ24iOiJQYXLEqSIsImtuIjoi4LKq4LON4LKv4LK+4LKw4LK/4LK44LONIiwibHQiOiJQYXJ5xb5pdXMiLCJ6YSI6IkJhaGxpeiIsImtrIjoi0J/QsNGA0LjQtiIsInpoIjoi5be06buOIiwiYXIiOiLYqNin2LHZitizIiwiaXQiOiJQYXJpZ2kiLCJ5byI6IlBhcmlzaSIsInBsIjoiUGFyecW8Iiwic3YiOiJQYXJpcyIsImJyIjoiUGFyaXoiLCJsYSI6Ikx1dGV0aWEiLCJhZiI6IlBhcnlzIiwiZ2wiOiJQYXLDrXMiLCJtbCI6IuC0quC0vuC0sOC0v+C0uOC1jSIsInNoIjoiUGFyaXoiLCJsbiI6IlBhcmkiLCJhbSI6IuGNk+GIquGItSIsInRhIjoi4K6q4K6+4K6w4K6/4K644K+NIiwiZGUiOiJQYXJpcyIsInVrIjoi0J/QsNGA0LjQtiIsImd1Ijoi4Kqq4KuF4Kqw4Kq/4Kq4Iiwia28iOiLtjIzrpqwiLCJ0ZSI6IuCwquCwvuCwsOCwv+CwuOCxjSIsImNhIjoiUGFyw61zIiwicHMiOiLZvtin2LHZitizIiwieWkiOiLXpNeQ16jXmdeWIiwiaHQiOiJQYXJpIiwic28iOiJCYWFyaWlzIiwiaGUiOiLXpNeo15nXliIsIm9zIjoi0J/QsNGA0LjQtiIsInRnIjoi0J/QsNGA0LjQtiIsIndvIjoiUGFyaSIsImJnIjoi0J/QsNGA0LjQtiIsImt2Ijoi0J/QsNGA0LjQtiIsImN1Ijoi0J/QsNGA0LjQttGMIiwiY3YiOiLQn9Cw0YDQuNGBIiwicnUiOiLQn9Cw0YDQuNC2IiwidXIiOiLZvtuM2LHYsyIsImVvIjoiUGFyaXpvIiwiZXUiOiJQYXJpcyIsImhyIjoiUGFyaXoiLCJjbyI6IlBhcmlnaGppIiwic3EiOiJQYXJpc2kiLCJzbCI6IlBhcml6Iiwid2EiOiJQYXJpcyIsImNzIjoiUGHFmcOtxb4iLCJubyI6IlBhcmlzIiwic2MiOiJQYXJpZ2kiLCJ0bCI6IlBhcmlzIiwidGsiOiJQYXJpxb4iLCJqYSI6IuODkeODqiIsImt5Ijoi0J/QsNGA0LjQtiIsIm9yIjoi4Kyq4K2N4K2f4Ky+4Kyw4Ky/4Ky4IiwibHYiOiJQYXLEq3plIiwic3IiOiLQn9Cw0YDQuNC3IiwiaGEiOiJQYXJpaXMiLCJrdSI6IlBhcsOucyIsInRoIjoi4Lib4Liy4Lij4Li14LiqIiwibXkiOiLhgJXhgKvhgJvhgK7hgJnhgLzhgK3hgK/hgLciLCJldCI6IlBhcmlpcyIsImZ5IjoiUGFyeXMiLCJlcyI6IlBhcsOtcyIsImVsIjoizqDOsc+Bzq/Pg865IiwiYm8iOiLgvZXgvIvgvaLgvbLgvI0iLCJoaSI6IuCkquCliOCksOCkv+CkuCIsIm1rIjoi0J/QsNGA0LjQtyIsInp1IjoiSVBhcmlzaSIsImdhIjoiUMOhcmFzIiwiZmEiOiLZvtin2LHbjNizIiwiYnMiOiJQYXJpeiIsImJlIjoi0J/QsNGA0YvQtiIsInR0Ijoi0J/QsNGA0LjQtiIsIm5lIjoi4KSq4KWH4KSw4KS/4KS4IiwiaXMiOiJQYXLDrXMiLCJoeSI6ItWT1aHWgNWr1aYiLCJmaSI6IlBhcmlpc2kiLCJtciI6IuCkquClheCksOCkv+CkuCIsInVnIjoi2b7Yp9ix2YnamCIsImJuIjoi4Kaq4KeN4Kav4Ka+4Kaw4Ka/4Ka4IiwiaHUiOiJQw6FyaXpzIiwiYW4iOiJQYXLDrXMiLCJtaSI6IlBhcsSrIiwic2siOiJQYXLDrcW+IiwiZnIiOiJQYXJpcyIsIm5sIjoiUGFyaWpzIiwiYmEiOiLQn9Cw0YDQuNC2IiwibW4iOiLQn9Cw0YDQuNGBIiwib2MiOiJQYXLDrXMiLCJwYSI6IuCoquCpiOCosOCov+CouCIsImthIjoi4YOe4YOQ4YOg4YOY4YOW4YOYIiwibGIiOiJQYXLDpGlzIiwibGkiOiJQYXJpZXMifSwibGF0Ijo0OC44NTg4ODk3LCJsb24iOjIuMzIwMDQxMDIxNzIwMDc2NiwiY291bnRyeSI6IkZSIiwic3RhdGUiOiJJbGUtZGUtRnJhbmNlIn1d
+  recorded_at: Wed, 01 Oct 2025 12:49:42 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=564426a2e62c1aeb91171fa53f277c9e&lat=48.8588897&lon=2.3200410217200766&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 01 Oct 2025 12:49:43 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=48.86&lon=2.32&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":2.32,"lat":48.8589},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":19.42,"feels_like":18.7,"temp_min":18.75,"temp_max":20.74,"pressure":1027,"humidity":49,"sea_level":1027,"grnd_level":1017},"visibility":10000,"wind":{"speed":2.57,"deg":0},"clouds":{"all":0},"dt":1759322378,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1759297808,"sunset":1759339826},"timezone":7200,"id":6545270,"name":"Palais-Royal","cod":200}'
+  recorded_at: Wed, 01 Oct 2025 12:49:43 GMT
+recorded_with: VCR 6.3.1

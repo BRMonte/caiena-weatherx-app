@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/geo/1.0/direct?appid=564426a2e62c1aeb91171fa53f277c9e&limit=1&q=London
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 01 Oct 2025 12:49:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2650'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/direct?limit=1&q=london"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibmFtZSI6IkxvbmRvbiIsImxvY2FsX25hbWVzIjp7Im15Ijoi4YCc4YCU4YC64YCS4YCU4YC64YCZ4YC84YCt4YCv4YC3IiwidGciOiLQm9C+0L3QtNC+0L0iLCJzYyI6IkxvbmRyYSIsImx2IjoiTG9uZG9uYSIsImdkIjoiTHVubmFpbm4iLCJ2aSI6Ikx1w6JuIMSQw7RuIiwiZmYiOiJMb25kb24iLCJmeSI6IkxvbmRlbiIsIm1nIjoiTMO0bmTDtG5hIiwic2wiOiJMb25kb24iLCJwdCI6IkxvbmRyZXMiLCJ0aCI6IuC4peC4reC4meC4lOC4reC4mSIsImRhIjoiTG9uZG9uIiwidWciOiLZhNmI2YbYr9uH2YYiLCJoYSI6IkxhbmRhbiIsIm5sIjoiTG9uZGVuIiwiY28iOiJMb25kcmEiLCJpZSI6IkxvbmRvbiIsImlzIjoiTG9uZG9uIiwidm8iOiJMb25kb24iLCJzZCI6ItmE2YbaitmGIiwicnUiOiLQm9C+0L3QtNC+0L0iLCJkZSI6IkxvbmRvbiIsInVyIjoi2LnZhNin2YLbgSDZhNmG2K/ZhiIsImN5IjoiTGx1bmRhaW4iLCJoeSI6ItS81bjVttWk1bjVtiIsImlnIjoiTG9uZG9uIiwid28iOiJMb25kYXIiLCJzbiI6IkxvbmRvbiIsImF5IjoiTG9uZG9uIiwic20iOiJMb25ldG9uYSIsInBhIjoi4Kiy4Kmw4Kih4KioIiwiYmgiOiLgpLLgpILgpKbgpKgiLCJmbyI6IkxvbmRvbiIsIm1zIjoiTG9uZG9uIiwiYWIiOiLQm9C+0L3QtNC+0L0iLCJlbyI6IkxvbmRvbm8iLCJvciI6IuCssuCso+CtjeCsoeCsqCIsInN1IjoiTG9uZG9uIiwibW4iOiLQm9C+0L3QtNC+0L0iLCJ6dSI6IklMb25kb24iLCJzaCI6IkxvbmRvbiIsImhpIjoi4KSy4KSC4KSm4KSoIiwibm8iOiJMb25kb24iLCJvYyI6IkxvbmRyZXMiLCJjdiI6ItCb0L7QvdC00L7QvSIsIndhIjoiTG9uZGUiLCJibyI6IuC9o+C9vOC9k+C8i+C9iuC9vOC9k+C8jSIsImt5Ijoi0JvQvtC90LTQvtC9IiwidHciOiJMb25kb24iLCJldCI6IkxvbmRvbiIsImduIjoiTMOzbmR5cmUiLCJsbiI6IkzDs25kyZtsyZsiLCJtdCI6IkxvbmRyYSIsInRyIjoiTG9uZHJhIiwiaWQiOiJMb25kb24iLCJmaiI6IkxvZG9uaSIsImZpIjoiTG9udG9vIiwia3UiOiJMb25kb24iLCJxdSI6IkxvbmRvbiIsImtrIjoi0JvQvtC90LTQvtC9Iiwia3ciOiJMb3VuZHJlcyIsImFtIjoi4YiI4YqV4Yuw4YqVIiwibXIiOiLgpLLgpILgpKHgpKgiLCJ1eiI6IkxvbmRvbiIsImxvIjoi4Lql4Lqt4LqZ4LqU4Lqt4LqZIiwiY2UiOiLQm9C+0L3QtNC+0L0iLCJpYSI6IkxvbmRvbiIsImtuIjoi4LKy4LKC4LKh4LKo4LONIiwibWsiOiLQm9C+0L3QtNC+0L0iLCJmYSI6ItmE2YbYr9mGIiwibWwiOiLgtLLgtKPgtY3gtJ/gtbsiLCJpbyI6IkxvbmRvbiIsImd1Ijoi4Kqy4KqC4Kqh4KqoIiwiZnIiOiJMb25kcmVzIiwiamEiOiLjg63jg7Pjg4njg7MiLCJodCI6Ikxvbm4iLCJsYiI6IkxvbmRvbiIsInpoIjoi5Lym5pWmIiwibmEiOiJMb25kb24iLCJrbyI6IuufsOuNmCIsImdhIjoiTG9uZGFpbiIsImVzIjoiTG9uZHJlcyIsInRvIjoiTG9uaXRvbmkiLCJiciI6IkxvbmRyZXoiLCJhciI6ItmE2YbYr9mGIiwiZW4iOiJMb25kb24iLCJibiI6IuCmsuCmqOCnjeCmoeCmqCIsImh1IjoiTG9uZG9uIiwibm4iOiJMb25kb24iLCJ1ayI6ItCb0L7QvdC00L7QvSIsInNlIjoiTG9uZG9uIiwia2EiOiLhg5rhg53hg5zhg5Phg53hg5zhg5giLCJzdiI6IkxvbmRvbiIsInJvIjoiTG9uZHJhIiwibWkiOiJSxIFuYW5hIiwib20iOiJMYW5kYW4iLCJudiI6IlRvb2ggRGluZcq8w6kgQmlraW4gSGFhbMq8w6EiLCJlbCI6Is6bzr/Ovc60zq/Ovc6/IiwidGUiOiLgsLLgsILgsKHgsKjgsY0iLCJrdiI6ItCb0L7QvdC00L7QvSIsInlpIjoi15zXkNeg15PXkNefIiwic2EiOiLgpLLgpKjgpY3gpKHgpKjgpY0iLCJ0YSI6IuCuh+CusuCuo+CvjeCun+CuqeCvjSIsInNpIjoi4La94Lax4LeK4Lap4Lax4LeKIiwiYmciOiLQm9C+0L3QtNC+0L0iLCJhc2NpaSI6IkxvbmRvbiIsImhlIjoi15zXldeg15PXldefIiwiYWYiOiJMb25kZW4iLCJwbCI6IkxvbmR5biIsInJtIjoiTG9uZHJhIiwiY3UiOiLQm9C+0L3QtNC+0L3RiiIsImJhIjoi0JvQvtC90LTQvtC9IiwiYXoiOiJMb25kb24iLCJueSI6IkxvbmRvbiIsInR0Ijoi0JvQvtC90LTQvtC9IiwiZ3YiOiJMdW5uaW4iLCJiaSI6IkxvbmRvbiIsInRsIjoiTG9uZHJlcyIsImV1IjoiTG9uZHJlcyIsInN3IjoiTG9uZG9uIiwidGsiOiJMb25kb24iLCJociI6IkxvbmRvbiIsInNrIjoiTG9uZMO9biIsImxpIjoiTG9uZGUiLCJqdiI6IkxvbmRvbiIsImJtIjoiTG9uZG9uIiwic28iOiJMb25kb24iLCJzcSI6IkxvbmRyYSIsIml0IjoiTG9uZHJhIiwic3IiOiLQm9C+0L3QtNC+0L0iLCJjcyI6IkxvbmTDvW4iLCJmZWF0dXJlX25hbWUiOiJMb25kb24iLCJvcyI6ItCb0L7QvdC00L7QvSIsImFuIjoiTG9uZHJlcyIsImF2Ijoi0JvQvtC90LTQvtC9IiwiZ2wiOiJMb25kcmVzIiwibHQiOiJMb25kb25hcyIsImNhIjoiTG9uZHJlcyIsImJlIjoi0JvQvtC90LTQsNC9IiwieW8iOiJM4buNbmThu41udSIsImtsIjoiTG9uZG9uIiwiZWUiOiJMb25kb24iLCJrbSI6IuGeoeGeu+GehOGeiuGfjSIsInN0IjoiTG9uZG9uIiwicHMiOiLZhNmG2K/ZhiIsIm5lIjoi4KSy4KSo4KWN4KSh4KSoIiwiYnMiOiJMb25kb24ifSwibGF0Ijo1MS41MDczMjE5LCJsb24iOi0wLjEyNzY0NzQsImNvdW50cnkiOiJHQiIsInN0YXRlIjoiRW5nbGFuZCJ9XQ==
+  recorded_at: Wed, 01 Oct 2025 12:49:42 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=564426a2e62c1aeb91171fa53f277c9e&lat=51.5073219&lon=-0.1276474&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 01 Oct 2025 12:49:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '503'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=51.51&lon=-0.13&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-0.1278,"lat":51.5074},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"base":"stations","main":{"temp":17.2,"feels_like":16.86,"temp_min":16.43,"temp_max":18.38,"pressure":1027,"humidity":72,"sea_level":1027,"grnd_level":1023},"visibility":10000,"wind":{"speed":2.57,"deg":170},"clouds":{"all":20},"dt":1759322591,"sys":{"type":2,"id":2075535,"country":"GB","sunrise":1759298467,"sunset":1759340342},"timezone":3600,"id":2643743,"name":"London","cod":200}'
+  recorded_at: Wed, 01 Oct 2025 12:49:42 GMT
+recorded_with: VCR 6.3.1
