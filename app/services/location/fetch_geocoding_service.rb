@@ -16,6 +16,7 @@ module Location
 
       ResponseBuilder.new(response, 'Geocoding').parse_geocoding_response
     rescue StandardError => e
+      mark_geocoding_broken
       Rails.logger.error { "Geocoding API error for city '#{city}': #{e.message}" }
       build_error(ERROR_CODES[:service_error], 'Unable to find coordinates for the specified city', retryable: true)
     end

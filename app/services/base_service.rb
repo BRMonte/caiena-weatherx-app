@@ -56,4 +56,19 @@ class BaseService
     end
     nil
   end
+
+  def self.check_geocoding_circuit
+    if Rails.cache.read('geocoding_broken')
+      return build_error(
+        ERROR_CODES[:circuit_open_error], 
+        'Geocoding is broken, try again later', 
+        retryable: true
+      )
+    end
+    nil
+  end
+  
+  def self.mark_geocoding_broken
+    Rails.cache.write('geocoding_broken', true, expires_in: 5.minutes)
+  end
 end

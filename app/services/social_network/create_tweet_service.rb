@@ -10,6 +10,9 @@ module SocialNetwork
         return cached_data[:tweet] if cached_data&.dig(:tweet)
       end
 
+      circuit_error = check_geocoding_circuit
+      return circuit_error if circuit_error
+
       weather_report = Weather::BuildWeatherReportService.call(city: city)
       if weather_report.is_a?(Hash) && weather_report[:error]
         return build_error(ERROR_CODES[:service_error], weather_report[:error][:message], retryable: false)
