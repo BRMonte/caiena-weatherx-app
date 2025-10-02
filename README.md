@@ -109,7 +109,7 @@ weather_report = Weather::BuildWeatherReportService.call(city: 'London')
 puts weather_report
 
 # Post custom tweet
-tweet_result = Clients::TwitterClient.post_tweet("Test tweet")
+tweet_result = Clients::TwitterClient.post_tweet("Weather report")
 puts tweet_result[:tweet_id]
 ```
 
