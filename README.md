@@ -106,20 +106,13 @@ rails console
 ```ruby
 # Get weather report
 weather_report = Weather::BuildWeatherReportService.call(city: 'London')
-puts weather_report
 
 # Post custom tweet
 tweet_result = Clients::TwitterClient.post_tweet("Weather report")
-puts tweet_result[:tweet_id]
 ```
 
 ### Running Tests
 ```bash
-# Run all tests
 bundle exec rspec
-
-# Run specific test files
-bundle exec rspec spec/services/social_network/create_tweet_service_spec.rb
-bundle exec rspec spec/lib/clients/twitter_client_spec.rb
 ```
 
