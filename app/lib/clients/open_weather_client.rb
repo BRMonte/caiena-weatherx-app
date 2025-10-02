@@ -7,6 +7,9 @@ module Clients
     }.freeze
 
     def self.make_request(endpoint, params = {})
+      rate_limit_error = BaseService.check_api_rate_limit
+      return rate_limit_error if rate_limit_error
+
       uri = URI(BASE_URLS[endpoint])
       uri.query = URI.encode_www_form(params.merge(appid: ENV['WEATHER_API_KEY']))
       

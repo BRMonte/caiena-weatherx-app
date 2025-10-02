@@ -45,4 +45,15 @@ class BaseService
     Rails.logger.error { "JSON parsing error: #{e.message}" }
     build_error(ERROR_CODES[:parsing_error], 'Invalid JSON response from API', retryable: false)
   end
+
+  def self.check_api_rate_limit
+    unless CacheStore.check_api_rate_limit
+      return build_error(
+        ERROR_CODES[:rate_limit_error], 
+        'API rate limit exceeded. Please try again later.', 
+        retryable: true
+      )
+    end
+    nil
+  end
 end
