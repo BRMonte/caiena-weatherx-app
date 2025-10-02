@@ -1,93 +1,74 @@
-# README
+# WeatherX - Weather Tweet Generator
 
+A Rails application that fetches weather data and posts formatted weather reports to Twitter/X.
 
-## Architecture & Design
+## Core Functionality
 
-### Service-Oriented Architecture
-- **`FetchGeocodingService`** - Converts city names to coordinates
-- **`FetchCurrentWeatherService`** - Gets current weather data
-- **`FetchWeatherForecastService`** - Gets 5-day weather forecast
-- **`BuildWeatherReportService`** - Combines data into readable report
-- **`CreateTweetService`** - Orchestrates the entire flow
+### Weather Services
+- **`Location::FetchGeocodingService`** - Converts city names to coordinates
+- **`Weather::FetchCurrentWeatherService`** - Gets current weather data  
+- **`Weather::FetchWeatherForecastService`** - Gets 5-day weather forecast
+- **`Weather::BuildWeatherReportService`** - Combines data into readable report
+- **`SocialNetwork::CreateTweetService`** - Orchestrates the flow
 
-### Client Layer
+### External API Clients
 - **`Clients::OpenWeatherClient`** - Handles all OpenWeatherMap API calls
 - **`Clients::TwitterClient`** - Handles Twitter/X API interactions
 
 ### Utility Classes
-- **`BaseService`** - Common error handling and utilities
-- **`ResponseBuilder`** - Parses API responses consistently
+- **`BaseService`** - Common error handling, validation, and utilities
+- **`ResponseBuilder`** - Parses API responses
 - **`ForecastCalculator`** - Calculates daily temperature averages
+- **`CacheStore`** - Manages Rails-based caching and rate limiting
+
+## Performance & Reliability Features
+
+### Caching System
+- **Coordinates**: Cached for 24 hours (rarely change)
+- **Current Weather**: Cached for 30 minutes (frequent updates)
+- **Weather Forecast**: Cached for 2 hours (moderate updates)
+- **Tweets**: Cached for 2 hours (prevents duplicate posts)
+
+### Rate Limiting & Circuit Breaker
+- **API Rate Limiting**: Prevents exceeding OpenWeatherMap's 60 calls/minute limit
+- **Circuit Breaker**: Temporarily disables geocoding service after failures (5-minute cooldown)
+- **Graceful Degradation**: Services continue working despite partial failures
+
+### Error Handling
+- **Standardized Error Format**: Consistent error structure across all services
+- **Retry Logic**: Configurable retry for transient failures
+- **Comprehensive Logging**: Detailed error tracking and debugging
+- **Input Validation**: All inputs validated before processing
+
+## Architecture
+
+### Service-Oriented Design
+- **Single Responsibility**: Each service handles one specific task
+- **Dependency Injection**: Services depend on abstractions, not concrete classes
+- **Stateless Services**: No shared state between requests
+- **Modular Design**: Easy to test, maintain, and scale
+
+### Namespaced Organization
+- **`Location::`** - Geocoding services
+- **`Weather::`** - Weather data services  
+- **`SocialNetwork::`** - Social media services
+- **`Clients::`** - External API clients
 
 ## Dependencies
 
-### Core Rails Stack
-- **Rails 7.2.2** - Web framework
-- **Ruby 3.1.2** - Programming language
+### Core Stack
+- **Rails 7.2.2**
+- **Ruby 3.1.2**
 
 ### External APIs
 - **OpenWeatherMap API** - Weather data source
-- **Twitter/X API** - Social media posting
+- **Twitter/X API** - Social media posting (OAuth 1.0a)
 
 ### Development & Testing
 - **RSpec** - Testing framework
 - **VCR** - HTTP request recording/replaying
 - **WebMock** - HTTP request mocking
 - **Dotenv** - Environment variable management
-
-### Notable Absences
-- **No Database** - Stateless service architecture
-- **No Background Jobs** - Synchronous processing
-- **No Caching** - Real-time data only
-
-## Scalability Features
-
-### Horizontal Scaling
-- **Stateless Services** - No shared state between requests
-- **Independent Services** - Each service can be scaled separately
-- **API-First Design** - Easy to extract services into microservices
-
-### Performance Optimizations
-- **Service Composition** - Reusable components
-- **Error Handling** - Graceful degradation
-- **Logging** - Comprehensive request tracking
-- **VCR Cassettes** - Fast, reliable testing without API calls
-
-### Future Scaling Options
-- **Background Jobs** - Move to Sidekiq/Resque for async processing
-- **Caching Layer** - Add Redis for weather data caching
-- **API Gateway** - Add rate limiting and authentication
-
-## Safety & Reliability
-
-### Comprehensive Testing
-- **Unit Tests** - Individual service testing
-- **Integration Tests** - End-to-end workflow testing
-- **VCR Cassettes** - Real API response testing
-- **Error Scenarios** - Invalid inputs, API failures, network issues
-
-### Error Handling
-- **Standardized Errors** - Consistent error format across all services
-- **Retry Logic** - Configurable retry for transient failures
-- **Graceful Degradation** - Service continues working despite partial failures
-- **Logging** - Detailed error tracking and debugging
-
-### Security
-- **Environment Variables** - API keys stored securely
-- **Input Validation** - All inputs validated before processing
-- **Rate Limiting** - Respects API rate limits
-
-## Performance Approach
-
-### Current Performance
-- **Synchronous Processing** - Simple, predictable execution
-- **Direct API Calls** - No intermediate caching
-
-### Performance Optimizations
-- **Service Reuse** - Geocoding results cached within request
-- **Efficient Parsing** - Minimal data transformation
-- **Connection Pooling** - HTTP connections reused
-- **VCR Testing** - Fast test execution without network calls
 
 ## How to Run
 
@@ -114,25 +95,22 @@ TWITTER_ACCESS_TOKEN=your_twitter_access_token
 TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret
 ```
 
-### Running the Application
+### Usage
 
 #### Start Rails Console
 ```bash
 rails console
 ```
 
-#### Create Weather Tweets
-```ruby
-result = CreateTweetService.call(city: 'London')
-```
-
 #### Test Individual Services
 ```ruby
-weather_report = BuildWeatherReportService.call(city: 'London')
+# Get weather report
+weather_report = Weather::BuildWeatherReportService.call(city: 'London')
 puts weather_report
 
+# Post custom tweet
 tweet_result = Clients::TwitterClient.post_tweet("Test tweet")
-puts tweet_result
+puts tweet_result[:tweet_id]
 ```
 
 ### Running Tests
@@ -141,6 +119,7 @@ puts tweet_result
 bundle exec rspec
 
 # Run specific test files
-bundle exec rspec spec/services/create_tweet_service_spec.rb
+bundle exec rspec spec/services/social_network/create_tweet_service_spec.rb
 bundle exec rspec spec/lib/clients/twitter_client_spec.rb
 ```
+
