@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/geo/1.0/direct?appid=564426a2e62c1aeb91171fa53f277c9e&limit=1&q=London
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 Oct 2025 02:27:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2650'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/direct?limit=1&q=london"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibmFtZSI6IkxvbmRvbiIsImxvY2FsX25hbWVzIjp7InNuIjoiTG9uZG9uIiwicm8iOiJMb25kcmEiLCJtbiI6ItCb0L7QvdC00L7QvSIsImtvIjoi65+w642YIiwicHQiOiJMb25kcmVzIiwiZXQiOiJMb25kb24iLCJiYSI6ItCb0L7QvdC00L7QvSIsImlvIjoiTG9uZG9uIiwiYm8iOiLgvaPgvbzgvZPgvIvgvYrgvbzgvZPgvI0iLCJwcyI6ItmE2YbYr9mGIiwicGwiOiJMb25keW4iLCJibSI6IkxvbmRvbiIsImxiIjoiTG9uZG9uIiwiY3UiOiLQm9C+0L3QtNC+0L3RiiIsImx0IjoiTG9uZG9uYXMiLCJ0byI6Ikxvbml0b25pIiwiZmVhdHVyZV9uYW1lIjoiTG9uZG9uIiwiaWUiOiJMb25kb24iLCJ1ZyI6ItmE2YjZhtiv24fZhiIsInZpIjoiTHXDom4gxJDDtG4iLCJsdiI6IkxvbmRvbmEiLCJ0ZSI6IuCwsuCwguCwoeCwqOCxjSIsImt2Ijoi0JvQvtC90LTQvtC9Iiwic2QiOiLZhNmG2orZhiIsInBhIjoi4Kiy4Kmw4Kih4KioIiwicm0iOiJMb25kcmEiLCJlbCI6Is6bzr/Ovc60zq/Ovc6/Iiwic2kiOiLgtr3gtrHgt4rgtqngtrHgt4oiLCJiciI6IkxvbmRyZXoiLCJ0ayI6IkxvbmRvbiIsImF6IjoiTG9uZG9uIiwiYXNjaWkiOiJMb25kb24iLCJiZSI6ItCb0L7QvdC00LDQvSIsImtsIjoiTG9uZG9uIiwiYXYiOiLQm9C+0L3QtNC+0L0iLCJzaCI6IkxvbmRvbiIsImNzIjoiTG9uZMO9biIsImNlIjoi0JvQvtC90LTQvtC9IiwiaGEiOiJMYW5kYW4iLCJmYSI6ItmE2YbYr9mGIiwia3ciOiJMb3VuZHJlcyIsImhpIjoi4KSy4KSC4KSm4KSoIiwic2siOiJMb25kw71uIiwiZmoiOiJMb2RvbmkiLCJqYSI6IuODreODs+ODieODsyIsImZ5IjoiTG9uZGVuIiwiZm8iOiJMb25kb24iLCJhZiI6IkxvbmRlbiIsInNlIjoiTG9uZG9uIiwic2MiOiJMb25kcmEiLCJzcSI6IkxvbmRyYSIsImtrIjoi0JvQvtC90LTQvtC9Iiwic3QiOiJMb25kb24iLCJndSI6IuCqsuCqguCqoeCqqCIsImt5Ijoi0JvQvtC90LTQvtC9IiwibnkiOiJMb25kb24iLCJubyI6IkxvbmRvbiIsImlzIjoiTG9uZG9uIiwic3UiOiJMb25kb24iLCJkZSI6IkxvbmRvbiIsIm9zIjoi0JvQvtC90LTQvtC9IiwibnYiOiJUb29oIERpbmXKvMOpIEJpa2luIEhhYWzKvMOhIiwibXQiOiJMb25kcmEiLCJrYSI6IuGDmuGDneGDnOGDk+GDneGDnOGDmCIsInpoIjoi5Lym5pWmIiwiZ3YiOiJMdW5uaW4iLCJjYSI6IkxvbmRyZXMiLCJpdCI6IkxvbmRyYSIsInRhIjoi4K6H4K6y4K6j4K+N4K6f4K6p4K+NIiwidGwiOiJMb25kcmVzIiwia24iOiLgsrLgsoLgsqHgsqjgs40iLCJpZCI6IkxvbmRvbiIsImhyIjoiTG9uZG9uIiwidHciOiJMb25kb24iLCJmaSI6IkxvbnRvbyIsIm1rIjoi0JvQvtC90LTQvtC9IiwicnUiOiLQm9C+0L3QtNC+0L0iLCJtcyI6IkxvbmRvbiIsImxvIjoi4Lql4Lqt4LqZ4LqU4Lqt4LqZIiwiZ2wiOiJMb25kcmVzIiwib3IiOiLgrLLgrKPgrY3grKHgrKgiLCJtciI6IuCksuCkguCkoeCkqCIsImVlIjoiTG9uZG9uIiwia3UiOiJMb25kb24iLCJicyI6IkxvbmRvbiIsInRyIjoiTG9uZHJhIiwiaHkiOiLUvNW41bbVpNW41bYiLCJpZyI6IkxvbmRvbiIsImFtIjoi4YiI4YqV4Yuw4YqVIiwibmwiOiJMb25kZW4iLCJuZSI6IuCksuCkqOCljeCkoeCkqCIsInF1IjoiTG9uZG9uIiwidGciOiLQm9C+0L3QtNC+0L0iLCJtbCI6IuC0suC0o+C1jeC0n+C1uyIsImxpIjoiTG9uZGUiLCJzdyI6IkxvbmRvbiIsIm9tIjoiTGFuZGFuIiwiZ2QiOiJMdW5uYWlubiIsInV6IjoiTG9uZG9uIiwiZGEiOiJMb25kb24iLCJlbiI6IkxvbmRvbiIsInNyIjoi0JvQvtC90LTQvtC9IiwiZXMiOiJMb25kcmVzIiwiYm4iOiLgprLgpqjgp43gpqHgpqgiLCJqdiI6IkxvbmRvbiIsInZvIjoiTG9uZG9uIiwibmEiOiJMb25kb24iLCJpYSI6IkxvbmRvbiIsImN2Ijoi0JvQvtC90LTQvtC9Iiwib2MiOiJMb25kcmVzIiwiYmkiOiJMb25kb24iLCJldSI6IkxvbmRyZXMiLCJoZSI6Itec15XXoNeT15XXnyIsImxuIjoiTMOzbmTJm2zJmyIsInlpIjoi15zXkNeg15PXkNefIiwiYmciOiLQm9C+0L3QtNC+0L0iLCJtaSI6IlLEgW5hbmEiLCJ3YSI6IkxvbmRlIiwic20iOiJMb25ldG9uYSIsInVyIjoi2LnZhNin2YLbgSDZhNmG2K/ZhiIsImh1IjoiTG9uZG9uIiwid28iOiJMb25kYXIiLCJhciI6ItmE2YbYr9mGIiwiY3kiOiJMbHVuZGFpbiIsInNhIjoi4KSy4KSo4KWN4KSh4KSo4KWNIiwiY28iOiJMb25kcmEiLCJrbSI6IuGeoeGeu+GehOGeiuGfjSIsImJoIjoi4KSy4KSC4KSm4KSoIiwidGgiOiLguKXguK3guJnguJTguK3guJkiLCJ1ayI6ItCb0L7QvdC00L7QvSIsInNvIjoiTG9uZG9uIiwiZ24iOiJMw7NuZHlyZSIsImFuIjoiTG9uZHJlcyIsInR0Ijoi0JvQvtC90LTQvtC9IiwiaHQiOiJMb25uIiwibm4iOiJMb25kb24iLCJ6dSI6IklMb25kb24iLCJteSI6IuGAnOGAlOGAuuGAkuGAlOGAuuGAmeGAvOGAreGAr+GAtyIsIm1nIjoiTMO0bmTDtG5hIiwic2wiOiJMb25kb24iLCJzdiI6IkxvbmRvbiIsImZmIjoiTG9uZG9uIiwiYWIiOiLQm9C+0L3QtNC+0L0iLCJmciI6IkxvbmRyZXMiLCJheSI6IkxvbmRvbiIsInlvIjoiTOG7jW5k4buNbnUiLCJnYSI6IkxvbmRhaW4iLCJlbyI6IkxvbmRvbm8ifSwibGF0Ijo1MS41MDczMjE5LCJsb24iOi0wLjEyNzY0NzQsImNvdW50cnkiOiJHQiIsInN0YXRlIjoiRW5nbGFuZCJ9XQ==
+  recorded_at: Thu, 02 Oct 2025 02:27:17 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=564426a2e62c1aeb91171fa53f277c9e&lat=51.5073219&lon=-0.1276474&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 Oct 2025 02:27:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '520'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=51.51&lon=-0.13&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-0.1278,"lat":51.5074},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"base":"stations","main":{"temp":10.83,"feels_like":10.34,"temp_min":9.34,"temp_max":12.03,"pressure":1025,"humidity":91,"sea_level":1025,"grnd_level":1021},"visibility":9000,"wind":{"speed":0.89,"deg":257,"gust":1.34},"clouds":{"all":100},"dt":1759371474,"sys":{"type":2,"id":2075535,"country":"GB","sunrise":1759384965,"sunset":1759426605},"timezone":3600,"id":2643743,"name":"London","cod":200}'
+  recorded_at: Thu, 02 Oct 2025 02:27:18 GMT
+recorded_with: VCR 6.3.1

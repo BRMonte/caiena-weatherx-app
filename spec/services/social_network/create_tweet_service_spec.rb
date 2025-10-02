@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe CreateTweetService do
+RSpec.describe SocialNetwork::CreateTweetService do
   describe '.call' do
     context 'with valid city' do
       it 'creates weather tweet for London', :vcr do
-        result = CreateTweetService.call(city: 'London')
+        result = SocialNetwork::CreateTweetService.call(city: 'London')
 
         if result[:error]
           expect(result[:error][:code]).to eq('SERVICE_ERROR')
@@ -19,7 +19,7 @@ RSpec.describe CreateTweetService do
       end
 
       it 'creates weather tweet for Paris', :vcr do
-        result = CreateTweetService.call(city: 'Paris')
+        result = SocialNetwork::CreateTweetService.call(city: 'Paris')
 
         if result[:error]
           expect(result[:error][:code]).to eq('SERVICE_ERROR')
@@ -36,7 +36,7 @@ RSpec.describe CreateTweetService do
 
     context 'with blank city' do
       it 'returns validation error for empty string' do
-        result = CreateTweetService.call(city: '')
+        result = SocialNetwork::CreateTweetService.call(city: '')
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -46,7 +46,7 @@ RSpec.describe CreateTweetService do
       end
 
       it 'returns validation error for nil' do
-        result = CreateTweetService.call(city: nil)
+        result = SocialNetwork::CreateTweetService.call(city: nil)
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -58,7 +58,7 @@ RSpec.describe CreateTweetService do
 
     context 'when weather service fails' do
       it 'returns error for invalid city', :vcr do
-        result = CreateTweetService.call(city: 'NonExistentCity12345')
+        result = SocialNetwork::CreateTweetService.call(city: 'NonExistentCity12345')
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -69,14 +69,14 @@ RSpec.describe CreateTweetService do
 
     context 'when twitter service fails' do
       before do
-        allow(BuildWeatherReportService).to receive(:call).and_return("16°C e clear sky em London")
+        allow(Weather::BuildWeatherReportService).to receive(:call).and_return("16°C e clear sky em London")
         allow(Clients::TwitterClient).to receive(:post_tweet).and_return({
           error: { code: 'SERVICE_ERROR', message: 'Twitter API error', retryable: true }
         })
       end
 
       it 'handles twitter errors' do
-        result = CreateTweetService.call(city: 'London')
+        result = SocialNetwork::CreateTweetService.call(city: 'London')
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)

@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe FetchCurrentWeatherService do
+RSpec.describe Weather::FetchCurrentWeatherService do
   describe '.call' do
     context 'with valid city' do
       it 'returns current weather for London', :vcr do
-        result = FetchCurrentWeatherService.call(city: 'London')
+        result = Weather::FetchCurrentWeatherService.call(city: 'London')
 
         expect(result).to be_a(Hash)
         expect(result[:temperature]).to be_a(Float)
@@ -15,7 +15,7 @@ RSpec.describe FetchCurrentWeatherService do
       end
 
       it 'returns current weather for Paris', :vcr do
-        result = FetchCurrentWeatherService.call(city: 'Paris')
+        result = Weather::FetchCurrentWeatherService.call(city: 'Paris')
 
         expect(result).to be_a(Hash)
         expect(result[:temperature]).to be_a(Float)
@@ -28,7 +28,7 @@ RSpec.describe FetchCurrentWeatherService do
 
     context 'with blank city' do
       it 'returns validation error for empty string' do
-        result = FetchCurrentWeatherService.call(city: '')
+        result = Weather::FetchCurrentWeatherService.call(city: '')
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -38,7 +38,7 @@ RSpec.describe FetchCurrentWeatherService do
       end
 
       it 'returns validation error for nil' do
-        result = FetchCurrentWeatherService.call(city: nil)
+        result = Weather::FetchCurrentWeatherService.call(city: nil)
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -50,7 +50,7 @@ RSpec.describe FetchCurrentWeatherService do
 
     context 'when geocoding service fails' do
       it 'returns geocoding error for invalid city', :vcr do
-        result = FetchCurrentWeatherService.call(city: 'NonExistentCity12345')
+        result = Weather::FetchCurrentWeatherService.call(city: 'NonExistentCity12345')
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)

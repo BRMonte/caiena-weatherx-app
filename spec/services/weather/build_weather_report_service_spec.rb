@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BuildWeatherReportService do
+RSpec.describe Weather::BuildWeatherReportService do
   describe '.call' do
     context 'with valid city' do
       let(:city) { 'London' }
@@ -28,13 +28,13 @@ RSpec.describe BuildWeatherReportService do
       end
 
       before do
-        allow(FetchCurrentWeatherService).to receive(:call).with(city: city).and_return(current_weather_data)
-        allow(FetchWeatherForecastService).to receive(:call).with(city: city).and_return(forecast_data)
+        allow(Weather::FetchCurrentWeatherService).to receive(:call).with(city: city).and_return(current_weather_data)
+        allow(Weather::FetchWeatherForecastService).to receive(:call).with(city: city).and_return(forecast_data)
         allow(Date).to receive(:current).and_return(Date.parse('2024-01-01'))
       end
 
       it 'returns weather report string' do
-        result = BuildWeatherReportService.call(city: city)
+        result = Weather::BuildWeatherReportService.call(city: city)
 
         expect(result).to be_a(String)
         expect(result).to include('16°C e clear sky em London em 01/01')
@@ -42,16 +42,16 @@ RSpec.describe BuildWeatherReportService do
       end
 
       it 'calls both weather services' do
-        BuildWeatherReportService.call(city: city)
+        Weather::BuildWeatherReportService.call(city: city)
 
-        expect(FetchCurrentWeatherService).to have_received(:call).with(city: city)
-        expect(FetchWeatherForecastService).to have_received(:call).with(city: city)
+        expect(Weather::FetchCurrentWeatherService).to have_received(:call).with(city: city)
+        expect(Weather::FetchWeatherForecastService).to have_received(:call).with(city: city)
       end
     end
 
     context 'with blank city' do
       it 'returns validation error' do
-        result = BuildWeatherReportService.call(city: '')
+        result = Weather::BuildWeatherReportService.call(city: '')
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -74,11 +74,11 @@ RSpec.describe BuildWeatherReportService do
       end
 
       before do
-        allow(FetchCurrentWeatherService).to receive(:call).with(city: city).and_return(error_response)
+        allow(Weather::FetchCurrentWeatherService).to receive(:call).with(city: city).and_return(error_response)
       end
 
       it 'returns current weather error' do
-        result = BuildWeatherReportService.call(city: city)
+        result = Weather::BuildWeatherReportService.call(city: city)
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -102,12 +102,12 @@ RSpec.describe BuildWeatherReportService do
       end
 
       before do
-        allow(FetchCurrentWeatherService).to receive(:call).with(city: city).and_return(current_weather_data)
-        allow(FetchWeatherForecastService).to receive(:call).with(city: city).and_return(error_response)
+        allow(Weather::FetchCurrentWeatherService).to receive(:call).with(city: city).and_return(current_weather_data)
+        allow(Weather::FetchWeatherForecastService).to receive(:call).with(city: city).and_return(error_response)
       end
 
       it 'returns forecast error' do
-        result = BuildWeatherReportService.call(city: city)
+        result = Weather::BuildWeatherReportService.call(city: city)
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -121,11 +121,11 @@ RSpec.describe BuildWeatherReportService do
       let(:city) { 'London' }
 
       before do
-        allow(FetchCurrentWeatherService).to receive(:call).with(city: city).and_raise(StandardError, 'Network error')
+        allow(Weather::FetchCurrentWeatherService).to receive(:call).with(city: city).and_raise(StandardError, 'Network error')
       end
 
       it 'returns service error' do
-        result = BuildWeatherReportService.call(city: city)
+        result = Weather::BuildWeatherReportService.call(city: city)
 
         expect(result).to be_a(Hash)
         expect(result).to have_key(:error)
@@ -156,7 +156,7 @@ RSpec.describe BuildWeatherReportService do
     end
 
     it 'builds formatted weather report' do
-      result = BuildWeatherReportService.send(:build_report, current_weather, daily_averages)
+      result = Weather::BuildWeatherReportService.send(:build_report, current_weather, daily_averages)
 
       expect(result).to be_a(String)
       expect(result).to include('16°C e partly cloudy em Paris em 01/01')
@@ -164,7 +164,7 @@ RSpec.describe BuildWeatherReportService do
     end
 
     it 'rounds temperatures' do
-      result = BuildWeatherReportService.send(:build_report, current_weather, daily_averages)
+      result = Weather::BuildWeatherReportService.send(:build_report, current_weather, daily_averages)
 
       expect(result).to include('16°C')
       expect(result).to include('18°C')

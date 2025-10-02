@@ -1,7 +1,6 @@
 module ForecastCalculator
-  extend ActiveSupport::Concern
 
-  def calculate_daily_averages(forecast_list)
+  def self.calculate_daily_averages(forecast_list)
     grouped_by_date = group_forecasts_by_date(forecast_list)
     
     tomorrow = Date.current + 1.day
@@ -19,13 +18,13 @@ module ForecastCalculator
   
   private
   
-  def group_forecasts_by_date(forecast_list)
+  def self.group_forecasts_by_date(forecast_list)
     forecast_list.group_by do |forecast|
       Date.parse(forecast['dt_txt']).strftime('%Y-%m-%d')
     end
   end
   
-  def calculate_average_temperature(forecasts)
+  def self.calculate_average_temperature(forecasts)
     temperatures = forecasts.map { |f| f['main']['temp'] }
     average_kelvin = temperatures.sum / temperatures.count
     (average_kelvin - 273.15).round(2)
