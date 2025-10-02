@@ -4,7 +4,12 @@ module SocialNetwork
       return build_error(ERROR_CODES[:validation_error], 'City is required') if city.blank?
       
       Rails.logger.info { "Creating weather tweet for city: #{city}" }
-      
+
+      if CacheStore.is_fresh?(city, :tweet)
+        cached_data = CacheStore.get(city)
+        return cached_data[:tweet] if cached_data&.dig(:tweet)
+      end
+
       weather_report = Weather::BuildWeatherReportService.call(city: city)
       if weather_report.is_a?(Hash) && weather_report[:error]
         return build_error(ERROR_CODES[:service_error], weather_report[:error][:message], retryable: false)

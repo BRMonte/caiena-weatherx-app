@@ -4,7 +4,12 @@ module Weather
       return build_error(ERROR_CODES[:validation_error], 'City is required') if city.blank?
       
       Rails.logger.info { "Weather forecast request for city: #{city}" }
-      
+
+      if CacheStore.is_fresh?(city, :forecast)
+        cached_data = CacheStore.get(city)
+        return cached_data[:forecast] if cached_data&.dig(:forecast)
+      end
+
       coordinates = Location::FetchGeocodingService.call(city: city)
 
       if coordinates[:error]

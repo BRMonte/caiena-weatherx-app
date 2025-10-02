@@ -4,7 +4,12 @@ module Location
       return build_error(ERROR_CODES[:validation_error], 'City is required') if city.blank?
       
       Rails.logger.info { "Geocoding request for city: #{city}" }
-      
+
+      if CacheStore.is_fresh?(city, :coordinates)
+        cached_data = CacheStore.get(city)
+        return cached_data[:coordinates] if cached_data&.dig(:coordinates)
+      end
+
       response = Clients::OpenWeatherClient.make_request(:geocoding, { q: city, limit: 1 })
       error = validate_http_response(response, 'Geocoding')
       return error if error
