@@ -1,5 +1,4 @@
 module ForecastCalculator
-
   def self.calculate_daily_averages(forecast_list)
     grouped_by_date = group_forecasts_by_date(forecast_list)
     

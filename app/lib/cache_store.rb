@@ -1,4 +1,3 @@
-# app/lib/cache_store.rb
 class CacheStore
   CACHE_DURATION = {
     coordinates: 24.hours,

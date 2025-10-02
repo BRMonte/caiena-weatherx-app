@@ -5,7 +5,7 @@ module Weather
       return build_error(ERROR_CODES[:validation_error], 'City is required') if city.blank?
       
       Rails.logger.info { "Building weather report for city: #{city}" }
-      
+
       current_weather = Weather::FetchCurrentWeatherService.call(city: city)
       if current_weather[:error]
         return build_error(ERROR_CODES[:current_weather_error], current_weather[:error][:message], retryable: false)
