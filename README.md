@@ -2,6 +2,49 @@
 
 A Rails application that fetches weather data and posts formatted weather reports to Twitter/X.
 
+## API Endpoint
+
+### POST /v1/tweets
+
+Creates a weather tweet for the specified city.
+
+**Request:**
+```bash
+curl -X POST http://localhost:3000/v1/tweets \
+  -H "Content-Type: application/json" \
+  -d '{"city": "London"}'
+```
+
+**Parameters:**
+- `city` (string, required) - Name of the city for weather report
+
+**Success Response (201 Created):**
+```json
+{
+  "success": true,
+  "city": "London",
+  "weather_report": "16°C e clear sky em London em 03/10. Média para os próximos dias: 18°C em 04/10, 20°C em 05/10.",
+  "tweet_id": "1234567890123456789",
+  "tweet_text": "16°C e clear sky em London em 03/10. Média para os próximos dias: 18°C em 04/10, 20°C em 05/10."
+}
+```
+
+**Error Response:**
+```json
+{
+  "error": {
+    "code": "SERVICE_ERROR",
+    "message": "Unable to post tweet: Twitter API error",
+    "retryable": true,
+    "timestamp": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+## Weather Data
+
+All weather services (geocoding, current weather, forecasts) are wrapped into a custom `OpenWeatherSdk` gem for clean abstraction.
+
 ## Core Functionality
 
 ### Weather Services
@@ -115,4 +158,4 @@ tweet_result = Clients::TwitterClient.post_tweet("Weather report")
 ```bash
 bundle exec rspec
 ```
-
+```
